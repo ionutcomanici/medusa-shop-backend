@@ -59,7 +59,6 @@ export default async function seedDatabase({ container }: ExecArgs) {
       supported_currencies: [
         { currency_code: "ron", is_default: true },
       ],
-      default_currency_code: "ron",
     })
   }
 
@@ -218,7 +217,7 @@ export default async function seedDatabase({ container }: ExecArgs) {
   // Create Collections
   logger.info("Creating collections...")
   const [reduceriCollection, abiaIntrateCollection] =
-    await productModule.createCollections([
+    await productModule.createProductCollections([
       {
         title: "Reduceri Masive",
         handle: "reduceri-masive",
